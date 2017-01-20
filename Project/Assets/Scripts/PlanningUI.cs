@@ -25,7 +25,7 @@ public class PlanningUI : MonoBehaviour {
         InfoBar(false);
     }
 
-
+    // Turns the info bar on the left of the screen on or off.
     public void InfoBar(bool hidePanel)
     {
         if (hidePanel)
