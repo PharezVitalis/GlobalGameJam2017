@@ -7,7 +7,7 @@ public class SoundManager : MonoBehaviour {
     private AudioClip[] ambience;
     [SerializeField]
     private string[] ambientNames;
-  
+ 
 
     [SerializeField]
     private AudioClip[] spot;
