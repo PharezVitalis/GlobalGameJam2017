@@ -45,7 +45,9 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+     <Compile Include="Assets\Scripts\BeamBehaviour.cs" />
      <Compile Include="Assets\Scripts\Decal.cs" />
+     <Compile Include="Assets\Scripts\PlanetUI.cs" />
      <Compile Include="Assets\Scripts\PlanningUI.cs" />
      <Compile Include="Assets\Scripts\PooledObjectType.cs" />
      <Compile Include="Assets\Scripts\Pooler.cs" />
