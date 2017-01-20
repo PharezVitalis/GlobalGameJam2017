@@ -104,6 +104,6 @@ public class Satelitte : MonoBehaviour {
         light.intensity = minIntensity;
     }
 	
-
+    
 
 }
