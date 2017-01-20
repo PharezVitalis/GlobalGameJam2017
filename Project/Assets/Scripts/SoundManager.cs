@@ -4,21 +4,23 @@ using UnityEngine.Audio;
 
 public class SoundManager : MonoBehaviour {
     [SerializeField]
-    AudioClip[] ambience;
+    private AudioClip[] ambience;
     [SerializeField]
-    string[] ambientNames;
+    private string[] ambientNames;
+  
 
     [SerializeField]
-    AudioClip[] spot;
+    private AudioClip[] spot;
     [SerializeField]
-    string[] spotNames;
+    private string[] spotNames;
+    
 
     [SerializeField]
-    AudioClip[] music;
+    private AudioClip[] music;
     [SerializeField]
-    string[] musicNames;
+   private string[] musicNames;
+  
 
-   
 
     // Use this for initialization
     public static SoundManager instance;
@@ -30,6 +32,8 @@ public class SoundManager : MonoBehaviour {
 
         DontDestroyOnLoad(gameObject);
     }
+
+    
 
     public AudioClip GetAmbience(string name)
     {
