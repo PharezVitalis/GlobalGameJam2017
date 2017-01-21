@@ -19,7 +19,7 @@ public class FromToMovement : MonoBehaviour {
     {
         targetPosition = position;
 
-        print(targetPosition);
+
 
         c = GetComponents<Collider2D>();
 
@@ -81,6 +81,14 @@ public class FromToMovement : MonoBehaviour {
         get
         {
             return Vector2.Distance(transform.position, targetPosition);
+        }
+    }
+
+    public bool HasTarget
+    {
+        get
+        {
+            return hasTarget;
         }
     }
 }

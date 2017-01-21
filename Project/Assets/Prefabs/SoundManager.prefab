@@ -240,11 +240,13 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 76b0f3d4d3b197d4aa95a8ca6edcf74c, type: 3}
   - {fileID: 8300000, guid: 6462a3c9278f46740b3938668c4126ab, type: 3}
   - {fileID: 8300000, guid: 6462a3c9278f46740b3938668c4126ab, type: 3}
+  - {fileID: 8300000, guid: 2d9bd6d678ccf004f9868e2e16c5efe1, type: 3}
   spotNames:
   - NegativeFeedback
   - SatelitteCrash
   - TechBeepsLong
   - TechBeepsShort
   - BeamEffect
+  - RocketLaunch
   music: []
   musicNames: []
