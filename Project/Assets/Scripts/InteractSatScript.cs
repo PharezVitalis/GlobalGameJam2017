@@ -3,6 +3,14 @@ using System.Collections;
 
 public class InteractSatScript : MonoBehaviour {
 
+    private bool isRotating = false;
+
+    private Satelitte satScript;
+
+    void Awake()
+    {
+        satScript = gameObject.GetComponent<Satelitte>();
+    }
 	
     void Update()
     {
@@ -15,7 +23,7 @@ public class InteractSatScript : MonoBehaviour {
                 if (hit.collider.tag == "Satellite")
                 {
                     Debug.Log("is satellite (left click)");
-                    RotateSat();
+                    isRotating = true;
 
                 }
             }
@@ -28,19 +36,37 @@ public class InteractSatScript : MonoBehaviour {
             {
                 if (hit.transform.tag == "Satellite")
                 {
-                    RotateSat();
+                    DeleteSat();
                     Debug.Log("is satellite (right click)");
                 }
             }
         }
+
+        if (isRotating == true && Input.GetMouseButton(0))
+        {
+            float d, radius;
+            radius = 1.2f;
+
+            // Pythagorus equation to work out if the point exist inside the circle.
+            d = Mathf.Pow((transform.position.x - Camera.main.ScreenToWorldPoint(Input.mousePosition).x), 2.0f) + Mathf.Pow(transform.position.y - Camera.main.ScreenToWorldPoint(Input.mousePosition).y, 2.0f);
+
+            d = Mathf.Sqrt(d);
+
+            // If the point clicked is outside of the circle then allow the satellite to point at the mouse.
+            // This is due to the sat turning way to fast without a buffer zone.
+            if (d > radius)
+            {
+                satScript.LookAt(Camera.main.ScreenToWorldPoint(Input.mousePosition));
+            } 
+        }
+
+        if (isRotating == true && Input.GetMouseButtonUp(0))
+        {
+            isRotating = false;
+        }
     }
 
     void DeleteSat()
-    {
-
-    }
-
-    void RotateSat()
     {
 
     }
