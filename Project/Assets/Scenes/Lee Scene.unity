@@ -107,7 +107,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000012348445430, guid: 2ff2b0e4a292969489fde6d40eec3b6d, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 4000012348445430, guid: 2ff2b0e4a292969489fde6d40eec3b6d, type: 2}
       propertyPath: m_LocalRotation.x
@@ -132,6 +132,14 @@ Prefab:
     - target: {fileID: 1000011053325392, guid: 2ff2b0e4a292969489fde6d40eec3b6d, type: 2}
       propertyPath: m_Name
       value: Planet (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010629035988, guid: 2ff2b0e4a292969489fde6d40eec3b6d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013903652462, guid: 2ff2b0e4a292969489fde6d40eec3b6d, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 2ff2b0e4a292969489fde6d40eec3b6d, type: 2}
@@ -203,6 +211,25 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
+--- !u!1 &1022604851 stripped
+GameObject:
+  m_PrefabParentObject: {fileID: 1000011444709270, guid: 13124433d8ac585449abd04afd4a16bf,
+    type: 2}
+  m_PrefabInternal: {fileID: 1273364731}
+--- !u!61 &1022604855
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1022604851}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
 --- !u!1001 &1273364731
 Prefab:
   m_ObjectHideFlags: 0
@@ -480,7 +507,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000012348445430, guid: 2ff2b0e4a292969489fde6d40eec3b6d, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 4000012348445430, guid: 2ff2b0e4a292969489fde6d40eec3b6d, type: 2}
       propertyPath: m_LocalRotation.x
@@ -500,6 +527,14 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4000012348445430, guid: 2ff2b0e4a292969489fde6d40eec3b6d, type: 2}
       propertyPath: m_RootOrder
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000010629035988, guid: 2ff2b0e4a292969489fde6d40eec3b6d, type: 2}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1000013903652462, guid: 2ff2b0e4a292969489fde6d40eec3b6d, type: 2}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
@@ -532,6 +567,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f63ce27b68ffe74b95339afb362135e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  planet: {fileID: 1000011053325392, guid: 2ff2b0e4a292969489fde6d40eec3b6d, type: 2}
+  planetOrbit: {fileID: 1000013903652462, guid: 2ff2b0e4a292969489fde6d40eec3b6d,
+    type: 2}
 --- !u!4 &1641914968
 Transform:
   m_ObjectHideFlags: 0

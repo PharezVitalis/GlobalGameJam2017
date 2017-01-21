@@ -25,6 +25,7 @@ public class InteractSatScript : MonoBehaviour {
             {
                 if (hit.collider.tag == "Satellite")
                 {
+                    satScript = hit.collider.gameObject.GetComponent<Satelitte>();
                     Debug.Log("is satellite (left click)");
                     isRotating = true;
 
