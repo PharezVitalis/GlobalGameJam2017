@@ -7,6 +7,8 @@ public class CreatingSatellites : MonoBehaviour {
 
     private Vector3 mouseClicked;
 
+    private Vector3 difference;
+
     private float angle;
 
     private GameObject satellite;
@@ -15,10 +17,12 @@ public class CreatingSatellites : MonoBehaviour {
     {
         if (Input.GetMouseButtonDown(0))
         {
-            RaycastHit hit;
-            Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+            //RaycastHit hit;
+            //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
-            if (Physics.Raycast(ray, out hit))
+            RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
+
+            if (Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero))
             {
                 if (hit.transform.tag == "PlanetOrbit")
                 {
@@ -30,17 +34,44 @@ public class CreatingSatellites : MonoBehaviour {
                     Debug.Log("is not planet orbit");
                 }
             }
+
+
+            
+            //if (Physics.Raycast(ray, out hit))
+            //{
+            //    if (hit.transform.tag == "PlanetOrbit")
+            //    {
+            //        Debug.Log("is planet orbit");
+            //        FindAngle();
+            //    }
+            //    else
+            //    {
+            //        Debug.Log("is not planet orbit");
+            //    }
+            //}
         }
     }
 
     void FindAngle()
     {
+        float radius = gameObject.GetComponent<CircleCollider2D>().radius;
+        Vector3 satPos;
+
         mouseClicked = Input.mousePosition;
+        origin = transform.position;
 
-        origin = gameObject.transform.parent.position;
+        print(origin);
 
-        angle = Vector3.Angle(origin, mouseClicked);
+        difference = origin - mouseClicked;
+
+        angle = Vector2.Angle(new Vector2(origin.x, origin.y + radius), mouseClicked);
+
+        print(angle);
 
         satellite = Pooler.current.GetPooled("Satellite");
+
+        
     }
+
+   
 }
