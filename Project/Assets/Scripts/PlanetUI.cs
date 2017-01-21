@@ -21,12 +21,7 @@ public class PlanetUI : MonoBehaviour {
             {
                 if (hit.transform.tag == "Planet")
                 {
-                    Debug.Log("is planet");
                     ToggleUI();
-                }
-                else
-                {
-                    Debug.Log("is not planet");
                 }
             }
         }

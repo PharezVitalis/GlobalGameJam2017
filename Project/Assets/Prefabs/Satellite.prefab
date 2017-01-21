@@ -41,7 +41,7 @@ GameObject:
   - 23: {fileID: 23000012755645230}
   m_Layer: 0
   m_Name: PlaceHolderArt
-  m_TagString: Untagged
+  m_TagString: Satellite
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -61,10 +61,10 @@ GameObject:
   - 50: {fileID: 50000011826305564}
   - 114: {fileID: 114000011854039120}
   - 82: {fileID: 82000010704807924}
-  - 114: {fileID: 114000010221888334}
+  - 114: {fileID: 114000013225880686}
   m_Layer: 0
-  m_Name: Satelitte
-  m_TagString: Satelitte
+  m_Name: Satellite
+  m_TagString: Satellite
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -298,18 +298,6 @@ Light:
   m_BounceIntensity: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!114 &114000010221888334
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000013935197380}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 31754d5667f7e0c498ea78d532461475, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  target: {fileID: 0}
 --- !u!114 &114000011854039120
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -325,6 +313,17 @@ MonoBehaviour:
   minDist: 0.06
   timeAtFadeStart: 0.5
   fadeTime: 2
+--- !u!114 &114000013225880686
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013935197380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77b4f413cbf13ee40ab65d001bb903f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!198 &198000012856460950
 ParticleSystem:
   m_ObjectHideFlags: 1

@@ -34,7 +34,7 @@ public class SatelitteMovement : FromToMovement{
         satelitteRocket.volume = initialVolume;
 
         satelitteRocket.Play();
-        print(arrivalBeep);
+        
 
         InvokeRepeating("CheckTime", 0.1f, 0.1f);
     }
