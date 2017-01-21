@@ -239,7 +239,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: acc580269d20f0b418ae0da7aa390cd8, type: 3}
   - {fileID: 8300000, guid: 76b0f3d4d3b197d4aa95a8ca6edcf74c, type: 3}
   - {fileID: 8300000, guid: 6462a3c9278f46740b3938668c4126ab, type: 3}
-  - {fileID: 8300000, guid: 6462a3c9278f46740b3938668c4126ab, type: 3}
+  - {fileID: 8300000, guid: 8484e8d79e5ba9748aee306f0fd2e3b5, type: 3}
   - {fileID: 8300000, guid: 2d9bd6d678ccf004f9868e2e16c5efe1, type: 3}
   spotNames:
   - NegativeFeedback
@@ -248,5 +248,7 @@ MonoBehaviour:
   - TechBeepsShort
   - BeamEffect
   - RocketLaunch
-  music: []
-  musicNames: []
+  music:
+  - {fileID: 8300000, guid: 7180166ba202d8f4096bc2540d2fabb0, type: 3}
+  musicNames:
+  - StarWaves

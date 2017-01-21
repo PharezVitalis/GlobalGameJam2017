@@ -35,6 +35,13 @@ public class SoundManager : MonoBehaviour {
         DontDestroyOnLoad(gameObject);
 
         musicSource = GetComponent<AudioSource>();
+        if (music != null)
+        {
+            musicSource.clip = music[0];
+            musicSource.loop = true;
+            musicSource.Play();
+        }
+        
         ambienceSource = GetComponentInChildren<AudioSource>();
     }
 
