@@ -66,6 +66,16 @@ public class SoundManager : MonoBehaviour {
         }
     }
 
+    public bool AmbienceIsPlaying()
+    {
+        return ambienceSource.isPlaying;
+    }
+
+    public bool MusicIsPlaying()
+    {
+        return musicSource.isPlaying;
+    }
+
     public AudioClip GetAmbience(string name)
     {
         for (int i = 0; i <ambientNames.Length; i++)

@@ -64,6 +64,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Scripts\BeamBehaviour.cs" />
+    <Compile Include="Assets\Scripts\CreatingSatellites.cs" />
     <Compile Include="Assets\Scripts\Decal.cs" />
     <Compile Include="Assets\Scripts\FromToMovement.cs" />
     <Compile Include="Assets\Scripts\PlanetUI.cs" />
