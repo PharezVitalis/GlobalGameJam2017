@@ -37,7 +37,7 @@ public class Satelitte : MonoBehaviour {
 
    void OnEnable()
     {
-        LeveManager.instance.SatelliteAdded();
+        LevelManager.instance.SatelliteAdded();
     }
 
 
@@ -98,7 +98,7 @@ public class Satelitte : MonoBehaviour {
 
         yield return new WaitForSeconds(deathSys.startLifetime);
 
-        LeveManager.instance.SatelliteDestroyed();
+        
         gameObject.SetActive(false);
     }
 
@@ -121,7 +121,7 @@ public class Satelitte : MonoBehaviour {
 
      void OnDisable()
     {
-
+        LevelManager.instance.SatelliteDestroyed();
         StopAllCoroutines();
         light.intensity = minIntensity;
     }

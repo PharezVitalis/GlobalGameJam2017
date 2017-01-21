@@ -6,7 +6,8 @@ using UnityEngine.Audio;
 public class UI : MonoBehaviour {
 
     [SerializeField]
-    private GameObject scene,interactable, howToPlayScene;
+    private GameObject scene,interactable, howToPlayScene, nonInteractable, winDialog;
+
     private GameObject cScene;
     bool h2PlayEnabled = false;
     [SerializeField]
@@ -20,7 +21,8 @@ public class UI : MonoBehaviour {
     [SerializeField]
     float deadSound = -80, dead = 0.05f;
 
-
+    Text points;
+    Text totalSatelittes;
 
     [SerializeField]
     private Slider masterVolSlider, ambientSlider, fxSlider, musicSlider;
@@ -100,8 +102,10 @@ public class UI : MonoBehaviour {
     {
         mixer.SetFloat("musicVol", (rawValue * childRange) + minChild);
     }
+
     void AdjustSfx(float rawValue)
     {
         mixer.SetFloat("fxVol", (rawValue * childRange) + minChild);
     }
+
 }

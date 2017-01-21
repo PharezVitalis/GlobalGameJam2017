@@ -2,9 +2,9 @@
 using System.Collections;
 using System.Collections.Generic;
 
-public class LeveManager : MonoBehaviour {
+public class LevelManager : MonoBehaviour {
 
-    public static LeveManager instance;
+    public static LevelManager instance;
     
     float displacement;
     int points=0, satellitesInUse=0, satellitesTotal=0;

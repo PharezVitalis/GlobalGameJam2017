@@ -70,7 +70,7 @@
     <Compile Include="Assets\Scripts\Goal.cs" />
     <Compile Include="Assets\Scripts\InteractSatScript.cs" />
     <Compile Include="Assets\Scripts\InteractionScript.cs" />
-    <Compile Include="Assets\Scripts\LeveManager.cs" />
+    <Compile Include="Assets\Scripts\LevelManager.cs" />
     <Compile Include="Assets\Scripts\PlanetUI.cs" />
     <Compile Include="Assets\Scripts\PlanningUI.cs" />
     <Compile Include="Assets\Scripts\PooledObjectType.cs" />

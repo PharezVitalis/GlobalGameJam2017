@@ -79,7 +79,7 @@ public class BeamBehaviour : MonoBehaviour {
         rbody.velocity = Vector2.zero;
         endTime = Time.time;
 
-        LeveManager.instance.PuzzleSolved(TotalDistance);
+        LevelManager.instance.PuzzleSolved(TotalDistance);
     }
 
     public void ResetRange()
