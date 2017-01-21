@@ -38,8 +38,8 @@ GameObject:
   - 33: {fileID: 33000013383546014}
   - 23: {fileID: 23000012877252326}
   - 95: {fileID: 95000010966111126}
-  - 135: {fileID: 135000011235954248}
   - 114: {fileID: 114000011857799082}
+  - 58: {fileID: 58000013630834150}
   m_Layer: 0
   m_Name: Planet
   m_TagString: Planet
@@ -64,7 +64,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &4000010438407230
 Transform:
   m_ObjectHideFlags: 1
@@ -72,7 +72,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000013903652462}
   m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
   m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
@@ -98,7 +98,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011053325392}
   m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -8.99, y: 4.21, z: -0}
+  m_LocalPosition: {x: -8.99, y: 4.21, z: -1}
   m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
@@ -142,6 +142,20 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011053325392}
   m_Mesh: {fileID: 4300000, guid: 3ba855fa701d3984f877d87771352ddc, type: 3}
+--- !u!58 &58000013630834150
+CircleCollider2D:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011053325392}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_Offset: {x: -0.000000059604645, y: 0}
+  serializedVersion: 2
+  m_Radius: 1.39109
 --- !u!58 &58000014101400598
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -196,18 +210,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   planetCircle: {fileID: 1000013903652462}
---- !u!135 &135000011235954248
-SphereCollider:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1000011053325392}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 2.1497035
-  m_Center: {x: -0.000000059604645, y: 0, z: 0}
 --- !u!212 &212000011230536272
 SpriteRenderer:
   m_ObjectHideFlags: 1
