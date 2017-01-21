@@ -74,6 +74,9 @@ public class BeamBehaviour : MonoBehaviour {
         cDist = 0;
         beamEffect.volume = 1;
         startTime = Time.time;
+
+        CancelInvoke();
+        InvokeRepeating("CheckDist", 0, checkFreq);
     }
 
 }

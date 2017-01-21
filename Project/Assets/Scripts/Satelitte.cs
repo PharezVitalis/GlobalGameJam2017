@@ -51,7 +51,9 @@ public class Satelitte : MonoBehaviour {
         beam.transform.position = beamOutLocation.position;
         beamOutLocation.transform.rotation = beamOutLocation.rotation;
 
+
         beam.SetActive(true);
+        beam.GetComponent<BeamBehaviour>().ResetRange();
     }
 
     IEnumerator LightFlare()
@@ -93,6 +95,10 @@ public class Satelitte : MonoBehaviour {
         if (c.tag == "Obstacle")
         {
             StartCoroutine(DeathSequence());
+        }
+        else if (c.tag == "Beam")
+        {
+            BeamCollision(c.gameObject);
         }
     }
 
