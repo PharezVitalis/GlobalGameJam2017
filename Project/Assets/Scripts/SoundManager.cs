@@ -7,7 +7,9 @@ public class SoundManager : MonoBehaviour {
     private AudioClip[] ambience;
     [SerializeField]
     private string[] ambientNames;
- 
+
+    private AudioSource musicSource, ambienceSource;
+
 
     [SerializeField]
     private AudioClip[] spot;
@@ -31,9 +33,38 @@ public class SoundManager : MonoBehaviour {
         else Destroy(gameObject);
 
         DontDestroyOnLoad(gameObject);
+
+        musicSource = GetComponent<AudioSource>();
+        ambienceSource = GetComponentInChildren<AudioSource>();
     }
 
-    
+    public void PlayMusic(string name)
+    {
+        for (int i = 0; i < musicNames.Length; i++)
+        {
+            if (name == musicNames[i])
+            {
+                musicSource.clip = music[i];
+                musicSource.loop = true;
+                musicSource.Play();
+                return;
+            }
+        }
+    }
+
+    public void PlayAmbience(string name)
+    {
+        for (int i = 0; i < ambientNames.Length; i++)
+        {
+            if (name == ambientNames[i])
+            {
+                ambienceSource.clip = ambience[i];
+                ambienceSource.loop = true;
+                ambienceSource.Play();
+                return;
+            }
+        }
+    }
 
     public AudioClip GetAmbience(string name)
     {
