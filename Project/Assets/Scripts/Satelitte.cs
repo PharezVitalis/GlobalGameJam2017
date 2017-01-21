@@ -46,14 +46,14 @@ public class Satelitte : MonoBehaviour {
     {
         partSys.Play();
 
-        beam.SetActive(false);
+       
 
         beam.transform.position = beamOutLocation.position;
-        beamOutLocation.transform.rotation = beamOutLocation.rotation;
+        beam.transform.rotation = beamOutLocation.rotation;
 
 
-        beam.SetActive(true);
-        
+       
+        beam.GetComponent<BeamBehaviour>().ResetRange();
     }
 
     IEnumerator LightFlare()

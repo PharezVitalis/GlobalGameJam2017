@@ -56,4 +56,19 @@ public class FromToMovement : MonoBehaviour {
 
     }
 	
+    public float Speed
+    {
+        get
+        {
+            return speed;
+        }
+    }
+
+    public float Distance
+    {
+        get
+        {
+            return Vector2.Distance(transform.position, targetPosition);
+        }
+    }
 }

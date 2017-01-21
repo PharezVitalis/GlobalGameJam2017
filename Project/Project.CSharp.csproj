@@ -72,6 +72,7 @@
     <Compile Include="Assets\Scripts\PooledObjectType.cs" />
     <Compile Include="Assets\Scripts\Pooler.cs" />
     <Compile Include="Assets\Scripts\Satelitte.cs" />
+    <Compile Include="Assets\Scripts\SatelitteMovement.cs" />
     <Compile Include="Assets\Scripts\SoundManager.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
