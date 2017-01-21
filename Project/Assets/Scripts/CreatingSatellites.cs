@@ -1,13 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class CreatingSatellites : MonoBehaviour {
+public class CreatingSatellites : MonoBehaviour
+{
 
-    private Vector3 origin;
+    private Vector2 origin;
 
-    private Vector3 mouseClicked;
+    private Vector2 mouseClicked;
 
-    private Vector3 difference;
+    private Vector2 difference;
 
     private float angle;
 
@@ -27,7 +28,7 @@ public class CreatingSatellites : MonoBehaviour {
                 if (hit.transform.tag == "PlanetOrbit")
                 {
                     Debug.Log("is planet orbit");
-                    FindAngle();
+                    FindPos();
                 }
                 else
                 {
@@ -36,7 +37,7 @@ public class CreatingSatellites : MonoBehaviour {
             }
 
 
-            
+
             //if (Physics.Raycast(ray, out hit))
             //{
             //    if (hit.transform.tag == "PlanetOrbit")
@@ -52,26 +53,28 @@ public class CreatingSatellites : MonoBehaviour {
         }
     }
 
-    void FindAngle()
+    void FindPos()
     {
         float radius = gameObject.GetComponent<CircleCollider2D>().radius;
-        Vector3 satPos;
+        Vector2 satPos;
 
-        mouseClicked = Input.mousePosition;
+        mouseClicked = Camera.main.ScreenToWorldPoint(Input.mousePosition);
         origin = transform.position;
 
-        print(origin);
+        Vector2 distanceToClick = origin - mouseClicked;
+        distanceToClick.Normalize();
+        satPos = distanceToClick * -radius;
 
-        difference = origin - mouseClicked;
 
-        angle = Vector2.Angle(new Vector2(origin.x, origin.y + radius), mouseClicked);
-
-        print(angle);
+        print(satPos);
 
         satellite = Pooler.current.GetPooled("Satellite");
 
         
     }
 
-   
+    void CreateSat()
+    {
+
+    }
 }
