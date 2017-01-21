@@ -17,14 +17,11 @@ public class SatelitteMovement : FromToMovement{
         //satelitteRocket = GetComponent<AudioSource>();
         //satelitteRocket.loop = true;
         //satelitteRocket.clip = ADD THIS
-        
+        //Invoke Checktime Repeating DO NOT USE UPDATE!
 
 	}
 	
-    void Update()
-    {
-        CheckTime();
-    }
+    
 
     void CheckTime()
     {
@@ -44,6 +41,7 @@ public class SatelitteMovement : FromToMovement{
 
     //        yield return new WaitForFixedUpdate();
     //    }
+    //satelitteRocket.Stop();
     //}
 	
     void OnDisable()

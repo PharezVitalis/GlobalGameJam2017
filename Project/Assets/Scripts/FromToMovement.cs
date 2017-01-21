@@ -13,9 +13,13 @@ public class FromToMovement : MonoBehaviour {
 
     Collider2D[] c;
 
+    
+
     public void GoToPoint(Vector3 position)
     {
         targetPosition = position;
+
+
 
         c = GetComponents<Collider2D>();
 
@@ -27,11 +31,12 @@ public class FromToMovement : MonoBehaviour {
             } 
         }
         hasTarget = true;
-        print(targetPosition);
+        
     }
 
     void Update()
     {
+        
 
         if (hasTarget)
         {
@@ -42,11 +47,12 @@ public class FromToMovement : MonoBehaviour {
             dir *= Time.deltaTime * speed;
             transform.position += dir;
 
-            print(dir);
+           
 
             if (Vector2.Distance(transform.position, targetPosition)< minDist)
             {
-                
+               
+
                 if (c != null)
                 {
                     for (int i = 0; i < c.Length; i++)
