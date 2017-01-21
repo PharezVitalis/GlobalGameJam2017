@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Satelitte
   - Obstacle
+  - Planet
+  - PlanetOrbit
   layers:
   - Default
   - TransparentFX

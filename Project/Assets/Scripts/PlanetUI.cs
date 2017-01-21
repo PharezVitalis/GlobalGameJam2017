@@ -6,8 +6,9 @@ public class PlanetUI : MonoBehaviour {
     [SerializeField]
     private GameObject planetCircle;
 
-    private bool isUIOpen = false;
+    private CreatingSatellites createSat;
 
+    private bool isUIOpen = false;
 
     void Update()
     {
