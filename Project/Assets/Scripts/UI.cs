@@ -7,6 +7,7 @@ public class UI : MonoBehaviour {
 
     [SerializeField]
     private GameObject scene,interactable, howToPlayScene;
+    private GameObject cScene;
     bool h2PlayEnabled = false;
     [SerializeField]
     AudioMixer mixer;
@@ -36,8 +37,9 @@ public class UI : MonoBehaviour {
 	
 	void Launch()
     {
-        scene.SetActive(true);
-        // play camera animations here
+        cScene = Instantiate(scene);
+        cScene.transform.position = Vector2.zero;
+        cScene.SetActive(true);
 
         gameObject.SetActive(false);
     }
@@ -85,6 +87,7 @@ public class UI : MonoBehaviour {
 
     void AdjustMaster(float rawValue)
     {
+        
         mixer.SetFloat("masterVol",(rawValue * masterRange) + minMaster);
     }
 

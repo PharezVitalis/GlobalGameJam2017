@@ -14,10 +14,10 @@ public class BeamBehaviour : MonoBehaviour {
     [SerializeField]
     private float maxDist = 10;
     private float cDist = 0;
-
+   
     AudioSource beamEffect;
    
-    private float startTime; 
+    private float startTime, spawnTime, endTime; 
     [SerializeField]
     private float checkFreq = 0.2f;
     
@@ -43,11 +43,12 @@ public class BeamBehaviour : MonoBehaviour {
 
         rbody.velocity = speed * (Vector2)transform.forward;
         cDist = 0;
-        startTime = Time.time;
+
+        startTime = spawnTime = Time.time;
 
         InvokeRepeating("CheckDist", checkFreq, checkFreq);
 
-        
+       
         beamEffect.Play();
     }
 
@@ -56,6 +57,8 @@ public class BeamBehaviour : MonoBehaviour {
         cDist = rbody.velocity.magnitude * (Time.time - startTime);
         beamEffect.volume = (maxDist - cDist)/maxDist;
 
+        
+
         if (cDist> maxDist)
         {
             gameObject.SetActive(false);
@@ -63,12 +66,22 @@ public class BeamBehaviour : MonoBehaviour {
 
     }
 
-    void OnDistable()
+    void OnDisable()
     {
         CancelInvoke();
         beamEffect.Stop();
+        cDist = 0;
+
     }
     
+    public void ReachedGoal()
+    {
+        rbody.velocity = Vector2.zero;
+        endTime = Time.time;
+
+        LeveManager.instance.PuzzleSolved(TotalDistance);
+    }
+
     public void ResetRange()
     {
         cDist = 0;
@@ -77,6 +90,21 @@ public class BeamBehaviour : MonoBehaviour {
 
         CancelInvoke();
         InvokeRepeating("CheckDist", 0, checkFreq);
+    }
+
+    public float TotalDistance
+    {
+        get
+        {
+            if (endTime != 0)
+            {
+                return (endTime - spawnTime) * speed;
+            }
+            else
+            {
+                return (Time.time - spawnTime) * speed;
+            }
+        }
     }
 
 }

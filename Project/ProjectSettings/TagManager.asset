@@ -9,6 +9,8 @@ TagManager:
   - Planet
   - PlanetOrbit
   - Beam
+  - BeamSpawnLocation
+  - Goal
   layers:
   - Default
   - TransparentFX
