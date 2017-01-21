@@ -35,10 +35,7 @@ public class Satelitte : MonoBehaviour {
         minIntensity = light.intensity;
     }
 
-    void OnEnable()
-    {
-        partSys.Play(false);
-    }
+   
 
     public void LookAt(Vector3 targetPos)
     {
