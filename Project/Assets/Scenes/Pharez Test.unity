@@ -176,6 +176,11 @@ Prefab:
       propertyPath: target
       value: 
       objectReference: {fileID: 1754633816}
+    - target: {fileID: 114000011854039120, guid: 0e1b77dd807dafb47b0bb99a7b84e97e,
+        type: 2}
+      propertyPath: fadeTime
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0e1b77dd807dafb47b0bb99a7b84e97e, type: 2}
   m_IsPrefabParent: 0

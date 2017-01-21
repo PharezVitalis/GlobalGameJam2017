@@ -5,6 +5,11 @@ using System.Collections;
 public class SatelitteMovement : FromToMovement{
 
     private AudioSource satelitteRocket;
+    private AudioClip rocketLaunch;
+    private AudioClip arrivalBeep;
+    private float initialVolume;
+
+    bool couroutineStarted = false;
 
     [SerializeField]
     private float timeAtFadeStart = 0.4f;
@@ -17,16 +22,19 @@ public class SatelitteMovement : FromToMovement{
     {
         satelitteRocket = GetComponent<AudioSource>();
         satelitteRocket.loop = true;
+        initialVolume = satelitteRocket.volume;
     }
 
     void OnEnable()
     {
        
-        satelitteRocket.clip = SoundManager.instance.GetSpot("RocketLaunch");
+        satelitteRocket.clip = rocketLaunch = SoundManager.instance.GetSpot("RocketLaunch");
+        arrivalBeep = SoundManager.instance.GetSpot("TechBeepsShort");
+        satelitteRocket.loop = true;
+        satelitteRocket.volume = initialVolume;
 
-        
-
-       
+        satelitteRocket.Play();
+        print(arrivalBeep);
 
         InvokeRepeating("CheckTime", 0.1f, 0.1f);
     }
@@ -39,15 +47,17 @@ public class SatelitteMovement : FromToMovement{
         {
             return;
         }
-        else if (!satelitteRocket.isPlaying)
-        {
-            satelitteRocket.Play();
-        }
+        
 
         float timeLeft = Distance / Speed;
         if ( timeLeft<= timeAtFadeStart)
         {
-            StartCoroutine(FadeSound());
+            if (! couroutineStarted)
+            {
+                StartCoroutine(FadeSound());
+                couroutineStarted = true;
+            }
+            
         }
 
     }
@@ -60,7 +70,15 @@ public class SatelitteMovement : FromToMovement{
 
             yield return new WaitForFixedUpdate();
         }
+      
         satelitteRocket.Stop();
+        satelitteRocket.loop = false;
+        satelitteRocket.clip = arrivalBeep;
+
+        satelitteRocket.volume = initialVolume;
+        yield return new WaitForFixedUpdate();
+        satelitteRocket.Play();
+        CancelInvoke();
     }
 
     void OnDisable()
