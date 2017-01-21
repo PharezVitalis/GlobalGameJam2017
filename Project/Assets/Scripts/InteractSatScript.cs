@@ -7,9 +7,12 @@ public class InteractSatScript : MonoBehaviour {
 
     private Satelitte satScript;
 
+    private Collider col;
+
     void Awake()
     {
         satScript = gameObject.GetComponent<Satelitte>();
+        col = GetComponent<Collider>();
     }
 	
     void Update()

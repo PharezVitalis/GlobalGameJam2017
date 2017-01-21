@@ -1,18 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class PlanetUI : MonoBehaviour {
-
-    [SerializeField]
-    private GameObject planetCircle;
-
-    private CreatingSatellites createSat;
-
-    private bool isUIOpen = false;
+public class InteractionScript : MonoBehaviour {
 
     private Collider col;
 
-    void Awake()
+    void Start()
     {
         col = GetComponent<Collider>();
     }
@@ -28,30 +21,15 @@ public class PlanetUI : MonoBehaviour {
             {
                 if (hit.collider.tag == "Planet")
                 {
-                    ToggleUI();
+                    
                 }
                 else if (hit.collider.tag != "PlanetOrbit")
                 {
-                    print("deslect");
-                    ToggleUI();
+                   
+                    
                 }
             }
-            
+
         }
     }
-
-    void ToggleUI()
-    {
-        if (isUIOpen == true)
-        {
-            planetCircle.SetActive(false);
-            isUIOpen = false;
-        }
-        else if (isUIOpen == false)
-        {
-            planetCircle.SetActive(true);
-            isUIOpen = true;
-        }
-    }
-
 }
