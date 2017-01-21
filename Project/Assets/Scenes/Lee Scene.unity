@@ -441,25 +441,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 4
---- !u!1 &1022604851 stripped
-GameObject:
-  m_PrefabParentObject: {fileID: 1000011444709270, guid: 13124433d8ac585449abd04afd4a16bf,
-    type: 2}
-  m_PrefabInternal: {fileID: 1273364731}
---- !u!61 &1022604855
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1022604851}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_UsedByEffector: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1}
 --- !u!1 &1074071067
 GameObject:
   m_ObjectHideFlags: 0
@@ -560,16 +541,6 @@ Prefab:
     - target: {fileID: 4000013547598594, guid: 13124433d8ac585449abd04afd4a16bf, type: 2}
       propertyPath: m_RootOrder
       value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 23000012223897258, guid: 13124433d8ac585449abd04afd4a16bf,
-        type: 2}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: bc6f8ab99b049f64bb2f4ad04b4642db, type: 2}
-    - target: {fileID: 23000012223897258, guid: 13124433d8ac585449abd04afd4a16bf,
-        type: 2}
-      propertyPath: m_Enabled
-      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 13124433d8ac585449abd04afd4a16bf, type: 2}
