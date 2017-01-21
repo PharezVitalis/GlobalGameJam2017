@@ -46,7 +46,8 @@ public class SatelitteMovement : FromToMovement
     {
         if (!HasTarget)
         {
-            return;
+            CancelInvoke();
+            return;            
         }
 
 

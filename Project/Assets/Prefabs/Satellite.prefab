@@ -62,6 +62,7 @@ GameObject:
   - 114: {fileID: 114000011854039120}
   - 82: {fileID: 82000010704807924}
   - 114: {fileID: 114000013225880686}
+  - 114: {fileID: 114000014170920794}
   m_Layer: 0
   m_Name: Satellite
   m_TagString: Satellite
@@ -312,7 +313,7 @@ MonoBehaviour:
   speed: 5
   minDist: 0.06
   timeAtFadeStart: 0.5
-  fadeTime: 2
+  fadeTime: 1
 --- !u!114 &114000013225880686
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -324,6 +325,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 77b4f413cbf13ee40ab65d001bb903f1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &114000014170920794
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000013935197380}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5c1307d77e07bfa4a8602139b9107c6a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  addedIntensity: 0.3
 --- !u!198 &198000012856460950
 ParticleSystem:
   m_ObjectHideFlags: 1
