@@ -41,8 +41,10 @@ public class BeamBehaviour : MonoBehaviour {
             beamEffect.clip = SoundManager.instance.GetSpot("BeamEffect");
         }
 
-        rbody.velocity = speed * (Vector2)transform.forward;
+        rbody.velocity = speed * (Vector2)transform.up;
         cDist = 0;
+
+        
 
         startTime = spawnTime = Time.time;
 
