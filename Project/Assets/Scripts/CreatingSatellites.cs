@@ -45,8 +45,9 @@ public class CreatingSatellites : MonoBehaviour
 
         Vector2 distanceToClick = origin - mouseClicked;
         distanceToClick.Normalize();
-        satPos = distanceToClick * -radius;
+        satPos = (distanceToClick * -radius / 2) + ((Vector2) transform.position);
 
+        print(satPos);
 
         satellite = Pooler.current.GetPooled("Satellite");
 

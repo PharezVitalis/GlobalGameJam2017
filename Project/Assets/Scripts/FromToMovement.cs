@@ -19,7 +19,7 @@ public class FromToMovement : MonoBehaviour {
     {
         targetPosition = position;
 
-
+        print(targetPosition);
 
         c = GetComponents<Collider2D>();
 
