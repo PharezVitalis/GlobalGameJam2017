@@ -53,7 +53,7 @@ public class Satelitte : MonoBehaviour {
 
 
         beam.SetActive(true);
-        beam.GetComponent<BeamBehaviour>().ResetRange();
+        
     }
 
     IEnumerator LightFlare()
