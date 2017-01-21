@@ -59,8 +59,7 @@ public class BeamBehaviour : MonoBehaviour {
         cDist = rbody.velocity.magnitude * (Time.time - startTime);
         beamEffect.volume = (maxDist - cDist)/maxDist;
 
-        
-
+        print(cDist);
         if (cDist> maxDist)
         {
             gameObject.SetActive(false);
