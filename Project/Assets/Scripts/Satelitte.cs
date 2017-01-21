@@ -113,6 +113,10 @@ public class Satelitte : MonoBehaviour {
         }
     }
 
+    public void PlayInteractParticles()
+    {
+        partSys.Play(false);
+    }
 
      void OnDisable()
     {

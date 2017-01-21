@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\Decal.cs" />
     <Compile Include="Assets\Scripts\FromToMovement.cs" />
     <Compile Include="Assets\Scripts\InteractSatScript.cs" />
+    <Compile Include="Assets\Scripts\LeveManager.cs" />
     <Compile Include="Assets\Scripts\PlanetUI.cs" />
     <Compile Include="Assets\Scripts\PlanningUI.cs" />
     <Compile Include="Assets\Scripts\PooledObjectType.cs" />

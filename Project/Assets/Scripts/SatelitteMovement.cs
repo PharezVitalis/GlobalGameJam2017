@@ -81,6 +81,8 @@ public class SatelitteMovement : FromToMovement
         yield return new WaitForFixedUpdate();
         sateliteRocket.Play();
         CancelInvoke();
+
+        GetComponent<Satelitte>().PlayInteractParticles();
     }
 
     void OnDisable()
