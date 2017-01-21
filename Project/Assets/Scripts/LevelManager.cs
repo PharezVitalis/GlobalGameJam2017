@@ -29,7 +29,7 @@ public class LevelManager : MonoBehaviour {
         }
         instance = this;
 
-        displacement = Vector2.Distance(GameObject.FindGameObjectWithTag("BeamSpawnLocation").transform.position,
+        displacement = Vector2.Distance(beamSpawnLocation.position,
             GameObject.FindGameObjectWithTag("Goal").transform.position);
     }
 
