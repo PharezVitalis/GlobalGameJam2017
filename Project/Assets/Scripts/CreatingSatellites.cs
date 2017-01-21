@@ -18,9 +18,6 @@ public class CreatingSatellites : MonoBehaviour
     {
         if (Input.GetMouseButtonDown(0))
         {
-            //RaycastHit hit;
-            //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-
             RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
 
             if (Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero))
@@ -35,21 +32,6 @@ public class CreatingSatellites : MonoBehaviour
                     Debug.Log("is not planet orbit");
                 }
             }
-
-
-
-            //if (Physics.Raycast(ray, out hit))
-            //{
-            //    if (hit.transform.tag == "PlanetOrbit")
-            //    {
-            //        Debug.Log("is planet orbit");
-            //        FindAngle();
-            //    }
-            //    else
-            //    {
-            //        Debug.Log("is not planet orbit");
-            //    }
-            //}
         }
     }
 
@@ -66,11 +48,12 @@ public class CreatingSatellites : MonoBehaviour
         satPos = distanceToClick * -radius;
 
 
-        print(satPos);
-
         satellite = Pooler.current.GetPooled("Satellite");
 
-        
+        satellite.SetActive(true);
+
+        satellite.GetComponent<FromToMovement>().GoToPoint(satPos);
+    
     }
 
     void CreateSat()
