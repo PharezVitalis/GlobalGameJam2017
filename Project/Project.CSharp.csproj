@@ -68,6 +68,7 @@
     <Compile Include="Assets\Scripts\Decal.cs" />
     <Compile Include="Assets\Scripts\FromToMovement.cs" />
     <Compile Include="Assets\Scripts\InteractSatScript.cs" />
+    <Compile Include="Assets\Scripts\InteractionScript.cs" />
     <Compile Include="Assets\Scripts\LeveManager.cs" />
     <Compile Include="Assets\Scripts\PlanetUI.cs" />
     <Compile Include="Assets\Scripts\PlanningUI.cs" />
@@ -76,6 +77,7 @@
     <Compile Include="Assets\Scripts\Satelitte.cs" />
     <Compile Include="Assets\Scripts\SatelitteMovement.cs" />
     <Compile Include="Assets\Scripts\SoundManager.cs" />
+    <Compile Include="Assets\Scripts\UI.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\SyntaxTree\UnityVS\2015\UnityVS.CSharp.targets" />
 </Project>
