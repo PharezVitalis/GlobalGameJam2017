@@ -23,9 +23,9 @@ public class Satelitte : MonoBehaviour {
     void Awake()
     {
         audio = GetComponent<AudioSource>();
-        
 
-        beamOutLocation = GetComponentInChildren<Transform>();
+
+        beamOutLocation = GetChildSpawner();
         partSys = GetComponent<ParticleSystem>();
 
         deathSys = GetComponentInChildren<ParticleSystem>();
@@ -33,6 +33,21 @@ public class Satelitte : MonoBehaviour {
 
         light = GetComponent<Light>();
         minIntensity = light.intensity;
+    }
+
+    Transform GetChildSpawner()
+    {
+        int length = transform.childCount;
+
+        for (int i = 0; i < length; i++)
+        {
+            Transform current = transform.GetChild(i);
+            if (current.gameObject.tag == "SpawnLocation")
+            {
+                return current;
+            }
+        }
+        return null;
     }
 
    void OnEnable()
@@ -55,15 +70,18 @@ public class Satelitte : MonoBehaviour {
     public void BeamCollision(GameObject beam)
     {
         partSys.Play(false);
+        BeamBehaviour beamBeh = beam.GetComponent<BeamBehaviour>();
 
-       
 
         beam.transform.position = beamOutLocation.position;
         beam.transform.rotation = beamOutLocation.rotation;
 
+        print(beam.transform.eulerAngles);
 
+        beamBeh.ResetRange();
+        beamBeh.VelocityReset();
        
-        beam.GetComponent<BeamBehaviour>().ResetRange();
+       
     }
 
     IEnumerator LightFlare()
@@ -100,6 +118,11 @@ public class Satelitte : MonoBehaviour {
 
         
         gameObject.SetActive(false);
+    }
+
+    public void Die()
+    {
+        StartCoroutine(DeathSequence());
     }
 
     void OnTriggerEnter2D(Collider2D c)

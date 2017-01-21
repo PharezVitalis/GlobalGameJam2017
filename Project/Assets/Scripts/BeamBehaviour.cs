@@ -68,6 +68,11 @@ public class BeamBehaviour : MonoBehaviour {
 
     }
 
+    public void VelocityReset()
+    {
+        rbody.velocity = speed * (Vector2)transform.up;
+    }
+
     void OnDisable()
     {
         CancelInvoke();
