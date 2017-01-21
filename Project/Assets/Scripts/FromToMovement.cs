@@ -38,7 +38,7 @@ public class FromToMovement : MonoBehaviour {
             dir *= Time.deltaTime * speed;
             transform.position += dir;
 
-            if (Vector3.Distance(transform.position, targetPosition)< minDist)
+            if (Vector2.Distance(transform.position, targetPosition)< minDist)
             {
                 
                 if (c != null)
@@ -48,7 +48,7 @@ public class FromToMovement : MonoBehaviour {
                         c[i].enabled = true;
                     }
                 }
-
+                
                 this.enabled = false;
             }
 

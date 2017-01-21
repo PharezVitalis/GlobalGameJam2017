@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   names:
-  - satellite
+  - Satellite
   - Beam
   size: 1400000003000000
   prefabs:
