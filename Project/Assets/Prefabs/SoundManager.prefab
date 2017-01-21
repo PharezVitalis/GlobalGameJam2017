@@ -243,7 +243,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2d9bd6d678ccf004f9868e2e16c5efe1, type: 3}
   spotNames:
   - NegativeFeedback
-  - SatelitteCrash
+  - SateliteCrash
   - TechBeepsLong
   - TechBeepsShort
   - BeamEffect

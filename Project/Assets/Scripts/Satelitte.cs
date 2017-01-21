@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Audio;
 
 public class Satelitte : MonoBehaviour {
 
@@ -8,6 +9,8 @@ public class Satelitte : MonoBehaviour {
     private Quaternion lookRot;
     private Vector3 diff;
     private ParticleSystem partSys;
+
+    private AudioSource audio;
 
     private ParticleSystem deathSys;
    
@@ -19,6 +22,7 @@ public class Satelitte : MonoBehaviour {
 
     void Awake()
     {
+        audio = GetComponent<AudioSource>();
         
 
         beamOutLocation = GetComponentInChildren<Transform>();
@@ -29,6 +33,11 @@ public class Satelitte : MonoBehaviour {
 
         light = GetComponent<Light>();
         minIntensity = light.intensity;
+    }
+
+    void OnEnable()
+    {
+        partSys.Play(false);
     }
 
     public void LookAt(Vector3 targetPos)
@@ -44,7 +53,7 @@ public class Satelitte : MonoBehaviour {
 
     public void BeamCollision(GameObject beam)
     {
-        partSys.Play();
+        partSys.Play(false);
 
        
 
@@ -78,7 +87,9 @@ public class Satelitte : MonoBehaviour {
 
     IEnumerator DeathSequence()
     {
+        audio.clip = SoundManager.instance.GetSpot("SateliteCrash");
         deathSys.Play();
+        audio.Play();
 
         yield return new WaitForSeconds(deathSys.duration);
 
