@@ -37,6 +37,7 @@ GameObject:
   - 4: {fileID: 4000012863925428}
   - 212: {fileID: 212000014283143532}
   - 114: {fileID: 114000012591555244}
+  - 114: {fileID: 114000014204475758}
   m_Layer: 0
   m_Name: asteroid_ 2
   m_TagString: Untagged
@@ -100,6 +101,17 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 1e794cbc6662c234a9337ba963a97c59, type: 3}
   - {fileID: 21300000, guid: 63c515b42d38c1a4588e71d7fed616b7, type: 3}
   - {fileID: 21300000, guid: 7c032e6cbc88f5846b7011ec13aed7ec, type: 3}
+--- !u!114 &114000014204475758
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1000011574892862}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b780003acb5f3b546b47e414d6ed419b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!212 &212000014283143532
 SpriteRenderer:
   m_ObjectHideFlags: 1
