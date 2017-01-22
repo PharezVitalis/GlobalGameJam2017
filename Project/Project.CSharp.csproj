@@ -80,6 +80,7 @@
     <Compile Include="Assets\Scripts\SatelitteMovement.cs" />
     <Compile Include="Assets\Scripts\SoundManager.cs" />
     <Compile Include="Assets\Scripts\SpinningHUDImage.cs" />
+    <Compile Include="Assets\Scripts\TutorialText.cs" />
     <Compile Include="Assets\Scripts\UI.cs" />
     <Compile Include="Assets\Scripts\WinDialog.cs" />
   </ItemGroup>
