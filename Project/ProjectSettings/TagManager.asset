@@ -12,6 +12,7 @@ TagManager:
   - BeamSpawnLocation
   - Goal
   - SpawnLocation
+  - Earth
   layers:
   - Default
   - TransparentFX

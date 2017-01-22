@@ -13,6 +13,8 @@ public class Satelitte : MonoBehaviour {
     private AudioSource audio;
 
     private ParticleSystem deathSys;
+
+    private Transform earthPos;
    
 
     [SerializeField]
@@ -22,6 +24,7 @@ public class Satelitte : MonoBehaviour {
 
     void Awake()
     {
+        earthPos = GameObject.FindWithTag("Earth").GetComponent<Transform>();
         audio = GetComponent<AudioSource>();
 
 
@@ -53,6 +56,9 @@ public class Satelitte : MonoBehaviour {
    void OnEnable()
     {
         LevelManager.instance.SatelliteAdded();
+
+        transform.position = earthPos.position;
+        transform.rotation = Quaternion.identity;
     }
 
 

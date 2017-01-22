@@ -40,7 +40,7 @@ public class InteractSatScript : MonoBehaviour {
             {
                 if (hit.transform.tag == "Satellite")
                 {
-                    DeleteSat();
+                    hit.transform.gameObject.SetActive(false);
                     Debug.Log("is satellite (right click)");
                 }
             }
@@ -68,10 +68,5 @@ public class InteractSatScript : MonoBehaviour {
         {
             isRotating = false;
         }
-    }
-
-    void DeleteSat()
-    {
-
     }
 }
