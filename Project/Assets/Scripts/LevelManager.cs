@@ -18,7 +18,7 @@ public class LevelManager : MonoBehaviour {
     [SerializeField]
     Transform beamSpawnLocation;
 
-    
+   
   
 
     void Awake()
@@ -28,9 +28,13 @@ public class LevelManager : MonoBehaviour {
             Destroy(instance.gameObject);
         }
         instance = this;
+        if (IsLevelScene)
+        {
 
-        displacement = Vector2.Distance(beamSpawnLocation.position,
-            GameObject.FindGameObjectWithTag("Goal").transform.position);
+
+            displacement = Vector2.Distance(beamSpawnLocation.position,
+                GameObject.FindGameObjectWithTag("Goal").transform.position);
+        }
     }
 
     void OnEnable()
@@ -41,7 +45,7 @@ public class LevelManager : MonoBehaviour {
 
 
        
-
+        if (IsLevelScene)
         InvokeRepeating("FireSignal", signalFireRate, signalFireRate);
     }
 
@@ -96,6 +100,14 @@ public class LevelManager : MonoBehaviour {
         get
         {
             return satellitesTotal;
+        }
+    }
+
+    public bool IsLevelScene
+    {
+        get
+        {
+            return !(Application.loadedLevel == 0);
         }
     }
 

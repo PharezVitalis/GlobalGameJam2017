@@ -6,7 +6,7 @@ using UnityEngine.Audio;
 public class UI : MonoBehaviour {
 
     [SerializeField]
-    private GameObject scene,interactable, howToPlayScene, nonInteractable, winDialog;
+    private GameObject interactable, howToPlayScene;
 
     [SerializeField]
     private string mainSceneName = "MainScene";
@@ -32,21 +32,25 @@ public class UI : MonoBehaviour {
 
     private float masterRange, childRange;
 	
-	void Start () {
-        scene.SetActive(false);
-        
+
+
+	void Start ()
+    {
 
         masterRange = maxMaster - minMaster;
         childRange = maxChild - minChild;
-	}
+
+        SetSliders();
+    }
 	
-	void Launch()
+	public void Launch()
     {
+       
         Application.LoadLevel(mainSceneName);
     }
 
 
-    void SetSliders()
+    public void SetSliders()
     {
         float value;
         mixer.GetFloat("masterVol", out value);
@@ -71,25 +75,25 @@ public class UI : MonoBehaviour {
         
     }
 
-    void AdjustMaster(float rawValue)
+    public void AdjustMaster()
     {
         
-        mixer.SetFloat("masterVol",(rawValue * masterRange) + minMaster);
+        mixer.SetFloat("masterVol",(masterVolSlider.value* masterRange) + minMaster);
     }
 
-    void AdjustAmbience(float rawValue)
+    public void AdjustAmbience()
     {
-        mixer.SetFloat("ambienceVol", (rawValue * childRange) + minChild);
+        mixer.SetFloat("ambienceVol", (ambientSlider.value * childRange) + minChild);
     }
 
-    void AdjustMusic(float rawValue)
+    public void AdjustMusic()
     {
-        mixer.SetFloat("musicVol", (rawValue * childRange) + minChild);
+        mixer.SetFloat("musicVol", (musicSlider.value * childRange) + minChild);
     }
 
-    void AdjustSfx(float rawValue)
+    public void AdjustSfx()
     {
-        mixer.SetFloat("fxVol", (rawValue * childRange) + minChild);
+        mixer.SetFloat("fxVol", (fxSlider.value * childRange) + minChild);
     }
 
 }
