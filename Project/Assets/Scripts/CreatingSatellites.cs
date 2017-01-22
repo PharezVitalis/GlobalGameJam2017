@@ -19,8 +19,11 @@ public class CreatingSatellites : MonoBehaviour
 
     private GameObject ring;
 
+    private TutorialText tutorial;
+
     void Awake()
     {
+        tutorial = GameObject.FindWithTag("TutorialUI").GetComponent<TutorialText>();
         audio = gameObject.GetComponent<AudioSource>();
     }
 
@@ -34,6 +37,7 @@ public class CreatingSatellites : MonoBehaviour
             {
                 if (hit.transform.tag == "PlanetOrbit")
                 {
+                    tutorial.ShowText(2);
                     int satNum = transform.parent.gameObject.GetComponent<PlanetUI>().GetSatNum();
 
                     if (satNum < 3)
