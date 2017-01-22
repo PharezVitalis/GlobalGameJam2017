@@ -17,7 +17,8 @@ public class Satelitte : MonoBehaviour {
     private Transform earthPos;
 
     private GameObject orbit;
-   
+
+    bool isFirstDeactivation = true;
 
     [SerializeField]
     private float addedIntensity = 0.3f;
@@ -87,7 +88,7 @@ public class Satelitte : MonoBehaviour {
         print(beam.transform.eulerAngles);
 
         beamBeh.ResetRange();
-        beamBeh.VelocityReset();
+      
        
        
     }
@@ -150,12 +151,20 @@ public class Satelitte : MonoBehaviour {
         partSys.Play(false);
     }
 
-     void OnDisable()
+     
+        void OnDisable()
     {
-        LevelManager.instance.SatelliteDestroyed();
-        StopAllCoroutines();
-        light.intensity = minIntensity;
-    }
+            if (!isFirstDeactivation)
+            {
+                LevelManager.instance.SatelliteDestroyed();
+                isFirstDeactivation = true;
+                light.intensity = minIntensity;
+            }
+
+            StopAllCoroutines();
+
+        }
+    
 
     public void SetOrbit(GameObject obj)
     {

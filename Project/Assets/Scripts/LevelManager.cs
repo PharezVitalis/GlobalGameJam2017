@@ -35,18 +35,24 @@ public class LevelManager : MonoBehaviour {
 
     void OnEnable()
     {
-        if (levelMusicName != null)
-        SoundManager.instance.PlayMusic(levelMusicName);
 
-        if (ambienceName != null)
-            SoundManager.instance.PlayAmbience(ambienceName);
-
+        Invoke("DelayedInitialise", 0.05f);
         
 
 
        
 
         InvokeRepeating("FireSignal", signalFireRate, signalFireRate);
+    }
+
+
+    void DelayedInitialise()
+    {
+        if (levelMusicName != null)
+            SoundManager.instance.PlayMusic(levelMusicName);
+
+        if (ambienceName != null)
+            SoundManager.instance.PlayAmbience(ambienceName);
     }
 
     void FireSignal()

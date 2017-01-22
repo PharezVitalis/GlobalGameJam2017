@@ -75,6 +75,7 @@
     <Compile Include="Assets\Scripts\PlanningUI.cs" />
     <Compile Include="Assets\Scripts\PooledObjectType.cs" />
     <Compile Include="Assets\Scripts\Pooler.cs" />
+    <Compile Include="Assets\Scripts\RandomSprite.cs" />
     <Compile Include="Assets\Scripts\Satelitte.cs" />
     <Compile Include="Assets\Scripts\SatelitteMovement.cs" />
     <Compile Include="Assets\Scripts\SoundManager.cs" />

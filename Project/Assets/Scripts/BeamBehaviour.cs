@@ -12,106 +12,101 @@ public class BeamBehaviour : MonoBehaviour {
     [SerializeField]
     private float speed = 5;
     [SerializeField]
-    private float maxDist = 10;
-    private float cDist = 0;
+    private float timeOut = 10;
+
+    float totalDistance = 0;
+    Vector2 prevPosition = Vector2.zero;
    
     AudioSource beamEffect;
    
-    private float startTime, spawnTime, endTime; 
+    private float startTime, spawnTime, initialVol; 
     [SerializeField]
-    private float checkFreq = 0.2f;
+    private float checkFreq = 0.1f;
     
 
-	// Use this for initialization
+	
 	void Awake ()
     {
         rbody = GetComponent<Rigidbody2D>();
 
         beamEffect = GetComponent<AudioSource>();
-
+        
         
 	}
 	
-	// Update is called once per frame
+    void Update()
+    {
+        totalDistance += Vector2.Distance(prevPosition, transform.position);
+        prevPosition = transform.position;
+
+    }
+	
 	void OnEnable()
     {
         if (!beamEffect.clip)
         {
             beamEffect.loop = true;
             beamEffect.clip = SoundManager.instance.GetSpot("BeamEffect");
+            initialVol = beamEffect.volume;
         }
 
         rbody.velocity = speed * (Vector2)transform.up;
-        cDist = 0;
+        prevPosition = transform.position;
 
         
 
         startTime = spawnTime = Time.time;
 
-        InvokeRepeating("CheckDist", checkFreq, checkFreq);
+        InvokeRepeating("AffectVolume", checkFreq, checkFreq);
 
        
         beamEffect.Play();
     }
 
-    void CheckDist()
+   
+
+    void AffectVolume()
     {
-        cDist = rbody.velocity.magnitude * (Time.time - startTime);
-        beamEffect.volume = (maxDist - cDist)/maxDist;
+        float cTime = Time.time - startTime;
 
-        
-
-        if (cDist> maxDist | rbody.velocity.magnitude< 0.1f)
+        if (cTime > timeOut)
         {
             gameObject.SetActive(false);
         }
+        else
+        {
+            beamEffect.volume = cTime / timeOut;
+        }
+
+        
 
     }
 
-    public void VelocityReset()
-    {
-        rbody.velocity = speed * (Vector2)transform.up;
-    }
+    
 
     void OnDisable()
     {
         CancelInvoke();
         beamEffect.Stop();
-        cDist = 0;
-
+        beamEffect.volume = initialVol;
+       
     }
     
     public void ReachedGoal()
     {
         rbody.velocity = Vector2.zero;
-        endTime = Time.time;
-
-        LevelManager.instance.PuzzleSolved(TotalDistance);
+        
+        LevelManager.instance.PuzzleSolved(totalDistance);
     }
 
     public void ResetRange()
     {
-        cDist = 0;
-        beamEffect.volume = 1;
+
+        beamEffect.volume = initialVol;
         startTime = Time.time;
-
-        CancelInvoke();
-        InvokeRepeating("CheckDist", 0, checkFreq);
+        rbody.velocity = speed * (Vector2)transform.up;
     }
 
-    public float TotalDistance
-    {
-        get
-        {
-            if (endTime != 0)
-            {
-                return (endTime - spawnTime) * speed;
-            }
-            else
-            {
-                return (Time.time - spawnTime) * speed;
-            }
-        }
-    }
+    
 
 }
