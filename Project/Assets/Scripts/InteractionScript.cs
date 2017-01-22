@@ -9,12 +9,17 @@ public class InteractionScript : MonoBehaviour {
     private GameObject planet, planetOrbit;
 
     private PlanetUI planetUI;
+
+    private TutorialText tutorial;
    
 
     void Start()
     {
+        tutorial = GameObject.FindWithTag("TutorialUI").GetComponent<TutorialText>();
         col = GetComponent<Collider>();
         planetUI = planet.GetComponent<PlanetUI>();
+
+        tutorial.ShowText(0);
     }
 
     void Update()
@@ -29,6 +34,7 @@ public class InteractionScript : MonoBehaviour {
             {
                 if (hit.collider.tag == "Planet")
                 {
+                    tutorial.ShowText(1);
                     if (hit.collider.gameObject == planet)
                     {
                         hit.collider.gameObject.GetComponent<PlanetUI>().ToggleUI();
