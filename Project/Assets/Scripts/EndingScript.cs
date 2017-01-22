@@ -13,7 +13,7 @@ public class EndingScript : MonoBehaviour {
         {
             screens[1].SetActive(true);
         }
-        else if (LevelManager.instance.Score >= 15)
+        else if (LevelManager.instance.Score >= 14)
         {
             screens[0].SetActive(true);
         }
