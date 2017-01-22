@@ -138,7 +138,7 @@ public class Satelitte : MonoBehaviour {
     {
         if (c.tag == "Obstacle")
         {
-            StartCoroutine(DeathSequence());
+          //  StartCoroutine(DeathSequence());
         }
         else if (c.tag == "Beam")
         {

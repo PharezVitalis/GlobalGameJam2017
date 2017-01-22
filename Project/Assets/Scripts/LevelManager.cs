@@ -28,6 +28,7 @@ public class LevelManager : MonoBehaviour {
             Destroy(instance.gameObject);
         }
         instance = this;
+        DontDestroyOnLoad(gameObject);
         if (IsLevelScene)
         {
 
@@ -85,6 +86,9 @@ public class LevelManager : MonoBehaviour {
     public void PuzzleSolved(float distanceTravelled)
     {
         points = Mathf.RoundToInt(displacement) - ((Mathf.RoundToInt(0.2f * (distanceTravelled / displacement)) + satellitesInUse / 2));
+        Application.LoadLevel("EndScene");
+
+        print("I WON : " + points);
     }
 
     public int Score
@@ -107,7 +111,9 @@ public class LevelManager : MonoBehaviour {
     {
         get
         {
-            return !(Application.loadedLevel == 0);
+            print(Application.loadedLevel != 0);
+            return (Application.loadedLevel != 0);
+            
         }
     }
 
