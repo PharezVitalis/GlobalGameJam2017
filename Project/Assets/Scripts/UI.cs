@@ -9,7 +9,7 @@ public class UI : MonoBehaviour {
     private GameObject interactable, howToPlayScene;
 
     [SerializeField]
-    private string mainSceneName = "MainScene";
+    private string mainSceneName = "Main Scene";
 
     private GameObject cScene;
     bool h2PlayEnabled = false;
@@ -46,7 +46,7 @@ public class UI : MonoBehaviour {
 	public void Launch()
     {
        
-        Application.LoadLevel(mainSceneName);
+        Application.LoadLevel(1);
     }
 
 
