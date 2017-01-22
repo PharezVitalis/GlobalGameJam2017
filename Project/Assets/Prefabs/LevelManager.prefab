@@ -51,7 +51,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e903e335c1cb7fe4997b6a95440caf44, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  signalFireRate: 1.5
+  signalFireRate: 3
   levelMusicName: StarWaves
   ambienceName: Void
   beamSpawnLocation: {fileID: 0}
