@@ -15,6 +15,8 @@ public class Satelitte : MonoBehaviour {
     private ParticleSystem deathSys;
 
     private Transform earthPos;
+
+    private GameObject orbit;
    
 
     [SerializeField]
@@ -153,6 +155,17 @@ public class Satelitte : MonoBehaviour {
         LevelManager.instance.SatelliteDestroyed();
         StopAllCoroutines();
         light.intensity = minIntensity;
+    }
+
+    public void SetOrbit(GameObject obj)
+    {
+        orbit = obj;
+    }
+
+    public GameObject GetOrbit()
+    {
+        return orbit.transform.parent.gameObject;
+
     }
 	
     

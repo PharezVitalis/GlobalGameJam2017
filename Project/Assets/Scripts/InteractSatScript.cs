@@ -40,6 +40,14 @@ public class InteractSatScript : MonoBehaviour {
             {
                 if (hit.transform.tag == "Satellite")
                 {
+                    Satelitte sat = transform.gameObject.GetComponent<Satelitte>();
+
+
+                    GameObject obj = sat.GetOrbit();
+                    obj.GetComponent<PlanetUI>().SetSatNum(-1);
+
+                    sat.SetOrbit(null);
+
                     hit.transform.gameObject.SetActive(false);
                     Debug.Log("is satellite (right click)");
                 }

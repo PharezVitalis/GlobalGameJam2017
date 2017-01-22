@@ -19,8 +19,6 @@ public class InteractionScript : MonoBehaviour {
 
     void Update()
     {
-    
-
         if (Input.GetMouseButtonDown(0))
         {
             RaycastHit2D hit;
