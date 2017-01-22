@@ -66,8 +66,8 @@
     <Compile Include="Assets\Scripts\BeamBehaviour.cs" />
     <Compile Include="Assets\Scripts\CreatingSatellites.cs" />
     <Compile Include="Assets\Scripts\Decal.cs" />
+    <Compile Include="Assets\Scripts\EndingScript.cs" />
     <Compile Include="Assets\Scripts\FromToMovement.cs" />
-    <Compile Include="Assets\Scripts\Goal.cs" />
     <Compile Include="Assets\Scripts\InteractSatScript.cs" />
     <Compile Include="Assets\Scripts\InteractionScript.cs" />
     <Compile Include="Assets\Scripts\LevelManager.cs" />
@@ -78,6 +78,7 @@
     <Compile Include="Assets\Scripts\RandomSprite.cs" />
     <Compile Include="Assets\Scripts\Satelitte.cs" />
     <Compile Include="Assets\Scripts\SatelitteMovement.cs" />
+    <Compile Include="Assets\Scripts\Slower.cs" />
     <Compile Include="Assets\Scripts\SoundManager.cs" />
     <Compile Include="Assets\Scripts\SpinningHUDImage.cs" />
     <Compile Include="Assets\Scripts\TutorialText.cs" />
