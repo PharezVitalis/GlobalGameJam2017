@@ -34,8 +34,7 @@ public class SatelitteMovement : FromToMovement
         sateliteRocket.loop = true;
         sateliteRocket.volume = initialVolume;
 
-        sateliteRocket.Play();
-        
+        sateliteRocket.Play();        
 
         InvokeRepeating("CheckTime", 0.1f, 0.1f);
     }
@@ -87,6 +86,7 @@ public class SatelitteMovement : FromToMovement
 
     void OnDisable()
     {
+        couroutineStarted = false;
         StopAllCoroutines();
         CancelInvoke();
     }
