@@ -56,5 +56,5 @@ MonoBehaviour:
   - Beam
   size: 1400000005000000
   prefabs:
-  - {fileID: 1000011053325392, guid: 2ff2b0e4a292969489fde6d40eec3b6d, type: 2}
+  - {fileID: 1000013935197380, guid: 0e1b77dd807dafb47b0bb99a7b84e97e, type: 2}
   - {fileID: 1000013482496402, guid: 963e390ab7ca33a43ae696253b2cec14, type: 2}
