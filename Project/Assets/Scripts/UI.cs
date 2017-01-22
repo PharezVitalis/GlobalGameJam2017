@@ -46,7 +46,7 @@ public class UI : MonoBehaviour {
 	public void Launch()
     {
        
-        Application.LoadLevel(1);
+        Application.LoadLevel(2);
     }
 
 
