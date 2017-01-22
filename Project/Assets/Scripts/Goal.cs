@@ -8,6 +8,8 @@ public class Goal : MonoBehaviour {
         if (c.tag == "Beam")
         {
             c.gameObject.GetComponent<BeamBehaviour>().ReachedGoal();
+
+            print("u win");
         }
     }
 }
