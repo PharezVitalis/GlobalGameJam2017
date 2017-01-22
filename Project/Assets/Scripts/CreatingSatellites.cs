@@ -3,6 +3,9 @@ using System.Collections;
 
 public class CreatingSatellites : MonoBehaviour
 {
+    private AudioSource audio;
+    [SerializeField]
+    private AudioClip[] clip;
 
     private Vector2 origin;
 
@@ -16,6 +19,11 @@ public class CreatingSatellites : MonoBehaviour
 
     private GameObject ring;
 
+    void Awake()
+    {
+        audio = gameObject.GetComponent<AudioSource>();
+    }
+
     void Update()
     {
         if (Input.GetMouseButtonDown(0))
@@ -24,14 +32,30 @@ public class CreatingSatellites : MonoBehaviour
 
             if ((hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero)))
             {
-                if (hit.transform.tag == "PlanetOrbit" && transform.parent.gameObject.GetComponent<PlanetUI>().GetSatNum() < 3)
+                if (hit.transform.tag == "PlanetOrbit")
                 {
-                    ring = gameObject;
-                    transform.parent.gameObject.GetComponent<PlanetUI>().SetSatNum(1);
-                    FindPos();
+                    int satNum = transform.parent.gameObject.GetComponent<PlanetUI>().GetSatNum();
+
+                    if (satNum < 3)
+                    {
+                        ring = gameObject;
+                        transform.parent.gameObject.GetComponent<PlanetUI>().SetSatNum(1);
+                        FindPos();
+                    }
+                    else if (satNum >= 3)
+                    {
+                        audio.clip = clip[1];
+                        audio.Play();
+                    }
                 }
             }
         }
+    }
+
+    void OnEnable()
+    {
+        audio.clip = clip[0];
+        audio.Play();
     }
 
     void FindPos()
@@ -58,10 +82,5 @@ public class CreatingSatellites : MonoBehaviour
 
         satellite.GetComponent<FromToMovement>().GoToPoint(satPos);
     
-    }
-
-    void CreateSat()
-    {
-
     }
 }
