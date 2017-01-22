@@ -15,6 +15,7 @@ TagManager:
   - Earth
   - TutorialUI
   - Alien
+  - Slower
   layers:
   - Default
   - TransparentFX
