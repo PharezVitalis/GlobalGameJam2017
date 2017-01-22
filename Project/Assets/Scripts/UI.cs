@@ -8,6 +8,9 @@ public class UI : MonoBehaviour {
     [SerializeField]
     private GameObject scene,interactable, howToPlayScene, nonInteractable, winDialog;
 
+    [SerializeField]
+    private string mainSceneName = "MainScene";
+
     private GameObject cScene;
     bool h2PlayEnabled = false;
     [SerializeField]
@@ -39,28 +42,9 @@ public class UI : MonoBehaviour {
 	
 	void Launch()
     {
-        cScene = Instantiate(scene);
-        cScene.transform.position = Vector2.zero;
-        cScene.SetActive(true);
-
-        gameObject.SetActive(false);
+        Application.LoadLevel(mainSceneName);
     }
 
-    void HowToPlay()
-    {
-        if (h2PlayEnabled)
-        {
-            howToPlayScene.SetActive(false);
-            interactable.SetActive(true);
-        }
-        else
-        {
-            howToPlayScene.SetActive(true);
-            interactable.SetActive(false);
-        }
-
-        h2PlayEnabled = !h2PlayEnabled;
-    }
 
     void SetSliders()
     {
