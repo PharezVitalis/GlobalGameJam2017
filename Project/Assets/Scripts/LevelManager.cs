@@ -111,8 +111,9 @@ public class LevelManager : MonoBehaviour {
     {
         get
         {
-            print(Application.loadedLevel != 0);
-            return (Application.loadedLevel != 0);
+            print(Application.loadedLevelName == "Main Scene");
+
+            return Application.loadedLevelName == "Main Scene";
             
         }
     }
@@ -126,6 +127,14 @@ public class LevelManager : MonoBehaviour {
     public void SatelliteDestroyed()
     {
         satellitesInUse--;
+    }
+
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
     }
 
 }

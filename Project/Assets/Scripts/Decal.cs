@@ -34,6 +34,8 @@ public class Decal : MonoBehaviour {
 	// Update is called once per frame
 
     
+   
+
 IEnumerator FadeOut()
     {
         yield return new WaitForSeconds(timeOut / 10);
@@ -58,5 +60,10 @@ IEnumerator FadeOut()
 
         
 
+    }
+
+    void OnDisable()
+    {
+        StopAllCoroutines();
     }
 }

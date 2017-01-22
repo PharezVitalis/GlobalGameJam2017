@@ -20,7 +20,7 @@ public class Intro : MonoBehaviour {
 
         launch.Play();
 
-        yield return new WaitForSeconds(1f);
+        yield return new WaitForSeconds(2f);
 
         Application.LoadLevel(1);
     }

@@ -9,7 +9,7 @@ public class UI : MonoBehaviour {
     private GameObject interactable, howToPlayScene;
 
     [SerializeField]
-    private string mainSceneName = "Main Scene";
+    private string mainSceneName = "MainScene";
 
     private GameObject cScene;
     bool h2PlayEnabled = false;

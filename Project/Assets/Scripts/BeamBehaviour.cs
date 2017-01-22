@@ -21,16 +21,19 @@ public class BeamBehaviour : MonoBehaviour {
    
     AudioSource beamEffect;
    
-    private float startTime, spawnTime, initialVol; 
+    private float startTime, spawnTime, initialVol;
     [SerializeField]
-    private float checkFreq = 0.1f;
-    
+    private float checkFreq = 0.1f, decalDropRate = 0.2f;
 
-	
+    [SerializeField]
+    private Sprite[] decalVars;
+
+    private SpriteRenderer rend;
+
 	void Awake ()
     {
         rbody = GetComponent<Rigidbody2D>();
-
+        rend = GetComponent<SpriteRenderer>();
         beamEffect = GetComponent<AudioSource>();
         
         
@@ -60,7 +63,7 @@ public class BeamBehaviour : MonoBehaviour {
         startTime = spawnTime = Time.time;
 
         InvokeRepeating("AffectVolume", checkFreq, checkFreq);
-
+        InvokeRepeating("SpawnDecal", decalDropRate, decalDropRate);
        
         beamEffect.Play();
     }
@@ -119,6 +122,20 @@ public class BeamBehaviour : MonoBehaviour {
         startTime = Time.time;
         rbody.velocity = speed * (Vector2)transform.up;
         
+    }
+
+    void SpawnDecal()
+    {
+        int index = Mathf.RoundToInt(Random.RandomRange(0, decalVars.Length));
+
+        GameObject decal = Pooler.current.GetPooled("Decal");
+        decal.transform.position = transform.position;
+        decal.GetComponent<Decal>().rend.sprite = decalVars[index];
+        decal.SetActive(true);
+        
+        index = Mathf.RoundToInt(Random.RandomRange(0, decalVars.Length));
+
+        rend.sprite = decalVars[index];
     }
 
     void OnTriggerEnter2D(Collider2D other)

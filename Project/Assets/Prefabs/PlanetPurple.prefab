@@ -89,10 +89,10 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012962278726}
-  m_LocalRotation: {x: 0.00016504525, y: -0.000014442949, z: 0.087155804, w: 0.9961947}
-  m_LocalPosition: {x: -0.04, y: -0.05, z: -3.1}
-  m_LocalScale: {x: 0.74360377, y: 0.7436038, z: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0.0066952542, y: 0.0005708076, z: 0.08494548, w: 0.996363}
+  m_LocalPosition: {x: 0.11, y: -0.24, z: -3.1}
+  m_LocalScale: {x: 1, y: 1, z: 0}
+  m_LocalEulerAnglesHint: {x: -0.77, y: 0, z: 9.746}
   m_Children: []
   m_Father: {fileID: 4000012726280402}
   m_RootOrder: 0
@@ -102,9 +102,9 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000011882116868}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 6.1181, y: 3.56, z: -1}
-  m_LocalScale: {x: 0.38378677, y: 0.38378677, z: 0.38378677}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 14.35536, y: 5.7046695, z: 0}
+  m_LocalScale: {x: 0.38378677, y: 0.383787, z: 0.383787}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 4000012611507176}
@@ -131,8 +131,8 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1000012258696106}
   m_LocalRotation: {x: 0.70429933, y: 0.06163867, z: -0.06161824, w: 0.70453274}
-  m_LocalPosition: {x: 0.039999545, y: 0, z: -0.07999972}
-  m_LocalScale: {x: 1.4271103, y: 1.4271109, z: 1.427111}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1.0615664, y: 1.0615668, z: 1.061567}
   m_LocalEulerAnglesHint: {x: 89.981, y: 10, z: 0}
   m_Children:
   - {fileID: 4000010407610012}
@@ -187,7 +187,7 @@ CircleCollider2D:
   m_UsedByEffector: 0
   m_Offset: {x: 0, y: 0}
   serializedVersion: 2
-  m_Radius: 3.6080961
+  m_Radius: 3.24
 --- !u!58 &58000011139744480
 CircleCollider2D:
   m_ObjectHideFlags: 1
@@ -366,7 +366,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 6324e50dfee523c47b9958d06843a26a, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 09e68042c2094cf4291324b7da18d102, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0

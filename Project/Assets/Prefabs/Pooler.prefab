@@ -54,7 +54,9 @@ MonoBehaviour:
   names:
   - Satellite
   - Beam
-  size: 1400000005000000
+  - Decal
+  size: 140000000500000032000000
   prefabs:
   - {fileID: 1000013935197380, guid: 0e1b77dd807dafb47b0bb99a7b84e97e, type: 2}
   - {fileID: 1000013482496402, guid: 963e390ab7ca33a43ae696253b2cec14, type: 2}
+  - {fileID: 1000010118637846, guid: ab2121229fdcde640a2554d83bd1187d, type: 2}
