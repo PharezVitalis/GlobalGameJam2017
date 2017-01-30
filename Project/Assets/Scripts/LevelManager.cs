@@ -41,7 +41,7 @@ public class LevelManager : MonoBehaviour {
     void OnEnable()
     {
 
-        Invoke("DelayedInitialise", 0.05f);
+        Invoke("DelayedInitialise", 0.25f);
         
 
 
@@ -86,9 +86,10 @@ public class LevelManager : MonoBehaviour {
     public void PuzzleSolved(float distanceTravelled)
     {
         points = Mathf.RoundToInt(displacement) - ((Mathf.RoundToInt(0.2f * (distanceTravelled / displacement)) + satellitesInUse / 2));
-        Application.LoadLevel("EndScene");
 
-        print("I WON : " + points);
+        CancelInvoke();
+        Application.LoadLevel("EndScene");
+       
     }
 
     public int Score
@@ -111,7 +112,7 @@ public class LevelManager : MonoBehaviour {
     {
         get
         {
-            print(Application.loadedLevelName == "Main Scene");
+
 
             return Application.loadedLevelName == "Main Scene";
             

@@ -126,14 +126,17 @@ public class BeamBehaviour : MonoBehaviour {
 
     void SpawnDecal()
     {
-        int index = Mathf.RoundToInt(Random.RandomRange(0, decalVars.Length));
+        int index = Mathf.RoundToInt(Random.Range(0, decalVars.Length));
 
         GameObject decal = Pooler.current.GetPooled("Decal");
+
+        if (!decal) return;
+
         decal.transform.position = transform.position;
         decal.GetComponent<Decal>().rend.sprite = decalVars[index];
         decal.SetActive(true);
         
-        index = Mathf.RoundToInt(Random.RandomRange(0, decalVars.Length));
+        index = Mathf.RoundToInt(Random.Range(0, decalVars.Length));
 
         rend.sprite = decalVars[index];
     }

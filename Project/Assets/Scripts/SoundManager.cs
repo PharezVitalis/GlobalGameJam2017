@@ -38,7 +38,7 @@ public class SoundManager : MonoBehaviour {
        
         
         ambienceSource = GetComponentInChildren<AudioSource>();
-        print("set up");
+
     }
 
     public void PlayMusic(string name)
